@@ -1,0 +1,80 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.IO;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class AddComments : System.Web.UI.Page
+{
+    HardDiskManage.KM_Filer.File_Helper FH = new HardDiskManage.KM_Filer.File_Helper();
+    HardDiskManage.KM_Comments_Filer.File_Comments_Helper FCH = new HardDiskManage.KM_Comments_Filer.File_Comments_Helper();
+
+    protected string path = "";
+    protected string filename = "";
+    protected string ftype = "";
+    protected bool isVirt;
+    protected string FlowId   //KM_file.FlowId
+    {
+        get
+        {
+            return ViewState["FlowId"] as string ?? "";
+        }
+        set { ViewState["FlowId"] = value; }
+    }
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+        filename = Path.GetFileName(Request["path"]); ;
+        ftype = Request["ftype"];
+        isVirt = Convert.ToBoolean(Request["isVirt"]);
+        path = Request["path"].Replace(@"/", @"\");
+        if (path != ConfigurationManager.AppSettings["rootPath"])
+        {
+            path = path.Replace(@"\" + filename, "");
+        }
+        
+
+        CKEditorControl1.Visible = !String.IsNullOrEmpty(path);
+
+        if (!IsPostBack) {
+            FlowId = null;
+            initcontrol();
+        
+        }
+    }
+
+    private void initcontrol()
+    {
+        FH.updateFileState(path, filename, "", ftype, isVirt);
+        FlowId = FH.queryFileList(path, filename, ftype, isVirt).Rows[0]["FlowId"].ToString(); 
+        CKEditorControl1.Text = "";
+        //DataTable dt = FCH.queryComments(FlowId);
+        //CKEditorControl1.Text = (dt.Rows.Count > 0 ? dt.Rows[0]["Comments"].ToString() : "");
+    }
+    private void backToReflash(string msg)
+    {
+        string msgbox = "parent.bootbox.alert('" + msg + "');";
+        string Refresh = "parent.fileCommentsFunc('" + ftype + "','" + path.Replace(@"\", @"/") + "/" + filename +  "','" + isVirt + "');";
+        string jsClose = "parent.closeModal();parent.modelresize();";
+
+        ScriptManager.RegisterStartupScript(this, this.GetType(), "prompt", "javascript:" + msgbox + Refresh + jsClose, true);
+    }
+    protected void btnSave_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            string Comments = CKEditorControl1.Text;
+            FCH.updateComments(FlowId, Comments, Session["Username"].ToString());
+            backToReflash("儲存成功");
+        }
+        catch (Exception ex) {
+
+            throw ex;
+        }
+    }
+}

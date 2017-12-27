@@ -1,0 +1,40 @@
+﻿<%@ WebHandler Language="C#" Class="FileCommon" %>
+
+using System;
+using System.Web;
+using System.Data;
+using System.IO;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Configuration;
+
+public class FileCommon : IHttpHandler {
+    
+    public void ProcessRequest (HttpContext context) {
+        string domain = ConfigurationManager.AppSettings["domain"];
+        string uid = ConfigurationManager.AppSettings["uid"];
+        string pwd = ConfigurationManager.AppSettings["pwd"];
+
+        using (new Impersonator(uid, domain, pwd))
+        {
+            DirectoryInfo dir = new DirectoryInfo(@"\\jeson\png");
+            FileInfo[] files = dir.GetFiles();
+            foreach (FileInfo file in files)
+            {
+
+                File.Copy(file.FullName, System.Web.HttpContext.Current.Server.MapPath(@"~/Temp/png/")+file.Name.Split('.')[0].ToString().Split('-')[0].ToString() + file.Extension,true);
+                //string filename = file.Name.Split('.')[0].ToString().Split('-')[0].ToString() + file.Extension;
+                //context.Response.Write(filename);
+                //context.Response.Write("<br/>");
+
+            }
+        }
+    }
+ 
+    public bool IsReusable {
+        get {
+            return false;
+        }
+    }
+
+}

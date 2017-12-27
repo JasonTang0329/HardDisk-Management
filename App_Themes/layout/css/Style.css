@@ -1,0 +1,155 @@
+﻿.menu {
+    list-style: none;
+    -webkit-padding-start: 10px;
+}
+
+    .menu li {
+        display: block;
+    }
+
+#menu {
+    overflow: scroll;
+}
+
+ul > ul {
+    margin-left: 15px;
+}
+
+.fname {
+    line-height: 24px;
+    word-break: break-all;
+}
+/*圖片使用*/
+.glyphicon-folder-close {
+    color: #DDAA00;
+}
+
+.glyphicon-folder-open {
+    color: #DDAA00;
+}
+
+.glyphicon-open-file {
+    color: #0000AA;
+}
+
+.glyphicon-triangle-right {
+    color: black;
+}
+
+.glyphicon-triangle-bottom {
+    color: black;
+}
+.glyphicon-hand-right {
+    color: #f00;
+}
+.glyphicon-bullhorn {
+    color: #f00;
+}
+
+.glyphicon-ok {
+    color: green;
+}
+
+.glyphicon-remove {
+    color: #f00;
+}
+.glyphicon-remove {
+    color: red;
+}
+
+/*圖片使用*/
+
+.annotation {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-right: 5px;
+}
+
+
+a, u {
+    text-decoration: none !important;
+}
+
+#filedisplay {
+    text-align: center;
+}
+
+    #filedisplay img {
+        width: 125px;
+    }
+
+#keyword H6 A {
+    font-size: large;
+}
+
+.liselect {
+    list-style-position: inside;
+    border: 2px solid black;
+    border-color: red;
+}
+
+.list-group-item p {
+    display: inline;
+}
+
+#addicon img {
+    height: 25px;
+    width: 25px;
+}
+
+#adddiv {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#searchresult {
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    left: 130px;
+    top: 71px;
+    background: #E0E0E0;
+    border-top: none;
+}
+
+.line {
+        font-size: 12px;
+        background: #E0E0E0;
+    padding: 2px;
+}
+
+.hover {
+    background: #007ab8;
+    color: #fff;
+}
+
+#main {
+    height: 100%;
+}
+
+
+
+
+#content {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+#home .class {
+    -webkit-user-select: none; /* for Chrome */
+}
+
+
+#commentlist {
+    overflow: scroll;
+    max-height: 250px;
+    overflow-x: hidden;
+}
+
+#addcomments {
+    margin-top: 10px;
+}
+
+#refKeyword {
+    display: inline;
+}

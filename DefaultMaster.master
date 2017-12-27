@@ -1,0 +1,35 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="DefaultMaster.master.cs"
+    Inherits="DefaultMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>TMKM</title>
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="App_Themes/layout/css/Style.css" rel="stylesheet" type="text/css" />
+<%--    <link href="App_Themes/layout/css/bootstrap1.css" rel="stylesheet" type="text/css"/>--%>
+<%--    <script src="/WebAppTemplate/Script/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="/WebAppTemplate/Script/bootstrap-3.3.4.js" type="text/javascript"></script>--%>
+    <script src="Script/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="Script/bootstrap-3.3.4.js" type="text/javascript"></script>
+    <script src="Script/bootbox.min.js" type="text/javascript"></script>
+    <script src="Script/clipboard.min.js" type="text/javascript"></script>
+    <script src="Script/AssessTools.js" type="text/javascript"></script>
+<%--    <script src="Script/bootstrap-pagy.js" type="text/javascript"></script>--%>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceInForm" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    <asp:ContentPlaceHolder ID="ContentPlaceBody" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>
