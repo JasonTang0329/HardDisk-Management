@@ -27,7 +27,7 @@ Provider Your Disk to Share Online(Using C#.NET)
 
 ## Before Download and Install, You need to prepared some environment
 > * IIS: greater or equal to 7
-> * .Net FrameWork: greater or equal to 3.5 
+> * .Net FrameWork: greater or equal to 4.5 
 > * SQL Server: greater or equal to 2008 R2
 
 ## First, Create the database 
