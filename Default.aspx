@@ -1,8 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DefaultMaster.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceInForm" runat="Server">
     <script type="text/javascript" src="Script/Default/AddDiv.js"></script>
     <script type="text/javascript" src="Script/Default/Donload.js"></script>
     <script type="text/javascript" src="Script/Default/FileInfo.js"></script>
@@ -106,11 +104,14 @@
         }
     </style>
 
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceInForm" runat="Server">
+
     <div id="main">
         <div id="header" class="col-xs-12 well" style="margin-bottom: 0px;">
             <div>
-                <h1 style="display: inline">TM</h1>
-                <h2 style="display: inline">&nbsp&nbspKnowledge Management</h2>
+                <h1 style="display: inline">HardDisk</h1>
+                <h2 style="display: inline">&nbsp&nbspManagement</h2>
             </div>
         </div>
         <div id="menu" class="col-xs-12  col-sm-6  col-md-4 well" style="padding: 0px;">
@@ -144,7 +145,7 @@
                         </div>
 
                     </div>
-                    <div style="width:90%">
+                    <div style="width: 90%">
                         <ul class="menu">
                             <li>
                                 <a class="folder" id="foderRoot" onclick="return false;" href="#">

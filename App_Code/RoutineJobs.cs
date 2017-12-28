@@ -45,7 +45,7 @@ public class RoutineJobs
              #region CheckUser
             try
             {
-                // 取得最新人事資料
+                // 取得最新資料夾結構
                 new HardDiskManage.KM_Filer.CheckFiler();
             }
             catch (Exception ex)

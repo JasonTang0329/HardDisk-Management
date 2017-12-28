@@ -42,7 +42,7 @@ function modelresize() {
 }
 function divResize() {
     //if ($(document).height() > 600) {
-        $("#header").height($(window).height() * 0.1);
+        //$("#header").height($(window).height() * 0.1);
         $("#menu").height($(window).height() * 0.8);
         $("#content").height($(window).height() * 0.8);
         if ($("#ifaDis").exists()) {
