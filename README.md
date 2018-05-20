@@ -23,7 +23,11 @@ Provider Your Disk to Share Online(Using C#.NET)
 >
 > 5.It can create a virtual folder and virtual hyperlink to share someone
 >
-> continue...
+> 6.When sometimes you want to download a document, but really not sure, however, this file is you want, this system can help to preview file and decided to download or not.
+>
+>7.If you want to find some keywords file, you can type in a sentence, this system can segmentation the sentence and search closely files.
+>
+> continue developing...
 
 ## Before Download and Install, You need to prepared some environment
 > * IIS: greater or equal to 7
